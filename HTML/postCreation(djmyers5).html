@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Creation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .text-box {
+            border: 1px solid black;
+            padding: 10px;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            resize: none;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .word-count {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 7.5px 15px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 1.0rem;
+            border-radius: 2.5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .forms-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .form-box {
+            border: 1px solid black;
+            padding: 10px;
+            width: 380px;
+        }
+
+        .form-box label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-box input {
+            width: 95%; /* Adjust the percentage as needed */
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .form-box select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PostPoint</h1>
+        <div class="text-box">
+            <textarea id="postContent" maxlength="200" placeholder="Start typing here..."></textarea>
+            <div class="word-count" id="wordCount">0/200 words</div>
+        </div>
+        <div class="forms-container">
+            <div class="form-box">
+                <label for="companyName">Enter a Company Name:</label>
+                <input type="text" id="companyName" name="companyName" placeholder="Company Name">
+            </div>
+            <div class="form-box">
+                <label for="rating">Submit a Rating (1-5 Stars):</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="btn">+ Create Post</button>
+        </div>
+    </div>
+</body>
+</html>

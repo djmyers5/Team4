@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostPoint</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <style>
+    html {
+      background-color: darkgray;
+    }
+    div {
+      background-color: #EAEAEA;
+    }
+    .btn {
+      border-radius: 1px;
+      padding: 3px 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="post">
+    <h1 style="font-size: 3em;">PostPoint</h1>
+
+    <div class="post">
+      <div class="title">Agriculture</div>
+      <div>
+        This week..
+      </div>
+
+      <br>
+
+      
+      <div class="options" onclick="toggleOptions('options1')">&#8942;
+        <div id="options1" class="options-content">
+          <p>Flag</p>
+        </div>
+      </div>
+      <button class="btn" onclick="toggleComments('comments1')">Comments</button>
+      <div id="comments1" class="comments">
+        <div class="comment">
+          <div class="user">User A</div>
+          <div>...</div>
+        </div>
+        <div class="comment">
+          <div class="user">User B</div>
+          <div ">...</div>
+        </div>
+        <div class=" comment">
+            <button class="btn" onclick="replyPost('userReply')">Reply</button>
+          </div>
+          <div id="userReply">
+            <br>
+            <textarea id="replyBox"></textarea>
+            <br>
+            <button class="btn" id="submitBtn">Submit</button>
+          </div>
+        </div>
+
+        <script src=" script.js">
+        </script>
+</body>
+
+</html>
