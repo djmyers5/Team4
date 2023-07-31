@@ -2,15 +2,8 @@
 <html>
 <head>
     <title>Company Affiliation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 40px;
-        }
-        h1 {
-            color: #333;
-        }
         label {
             display: block;
             margin-bottom: 10px;
@@ -20,16 +13,21 @@
             padding: 8px;
             margin-bottom: 10px;
         }
-        input[type="submit"] {
-            padding: 8px 20px;
-            background-color: green;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+
     </style>
 </head>
-<body>
+<body class="companyaff-body">
+    <header>
+        <h1>Post Point</h1>
+      </header>
+      <button class="btn logout-btn" onclick="location.href='index.html'">Log Out</button>
+      <div class="navigation-bar">
+        <button onclick="location.href='ChangeInfo.html'" class="sidebar-button">Account</button>
+        <button onclick="location.href='Compare.html'" class="sidebar-button">Compare</button>
+        <button onclick="location.href='weeklyp.html'" class="sidebar-button">Weekly Pulse</button>
+        <button class="sidebar-button">Settings</button>
+      </div>
+    <div class="body-styling">
     <h1>Company Affiliation</h1>
     <label for="company">Company:</label>
     <input type="text" id="company" name="company" placeholder="Enter your company name" required>
@@ -40,7 +38,8 @@
     <label for="industry">Industry:</label>
     <input type="text" id="industry" name="industry" placeholder="Enter your industry" required>
     <br>
-    <input type="submit" value="Submit">
+    <button class="index-btn ">Submit</button>
+    </div>
 </body>
 </html>
 

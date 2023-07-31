@@ -2,61 +2,13 @@
 <html>
 <head>
     <title>Survey</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        p {
-            font-weight: bold;
-        }
-
-        label {
-            margin-right: 10px;
-        }
-
-        input[type="radio"],
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        textarea {
-            width: 100%;
-            resize: vertical;
-        }
-
-        input[type="submit"] {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+    <header>
+        <h1>Post Point</h1>
+      </header>
+<div class="comapre-container">
 <h1>WeeklyPulse Survey</h1>
 
 <form>
@@ -64,18 +16,18 @@
     <p>Do you feel that you are being fairly compensated for your current position?</p>
 
     
-    <label for="yes">Yes</label>
+    <label for="yes">Yes: </label>
     <input type="radio" id="yes" name="likeProduct" value="yes">
-
-    <label for="no">No</label>
+    <br>
+    <label for="no">No:&nbsp </label>
     <input type="radio" id="no" name="likeProduct" value="no">
 
     <p>Comments:</p>
     <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
 
-    <input type="submit" value="Submit">
+    <button class="index-btn" onclick="location.href='index.html'">Submit</button>
 </form>
-
+</div>
 </body>
 </html>
 

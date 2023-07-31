@@ -6,24 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PostPoint</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-
-  <style>
-    html {
-      background-color: darkgray;
-    }
-    div {
-      background-color: #EAEAEA;
-    }
-    .btn {
-      border-radius: 1px;
-      padding: 3px 6px;
-    }
-  </style>
 </head>
-
 <body>
-  <div class="post">
-    <h1 style="font-size: 3em;">PostPoint</h1>
+  <header>
+    <h1>Post Point</h1>
+  </header>
+  <button class="btn logout-btn" onclick="location.href='index.html'">Log Out</button>
+  <div class="navigation-bar">
+    <button onclick="location.href='ChangeInfo.html'" class="sidebar-button">Account</button>
+    <button onclick="location.href='Compare.html'" class="sidebar-button">Compare</button>
+    <button onclick="location.href='weeklyp.html'" class="sidebar-button">Weekly Pulse</button>
+    <button class="sidebar-button">Settings</button>
+  </div>
 
     <div class="post">
       <div class="title">Agriculture</div>
@@ -39,7 +33,7 @@
           <p>Flag</p>
         </div>
       </div>
-      <button class="btn" onclick="toggleComments('comments1')">Comments</button>
+      <button class="btn view-post-button" onclick="toggleComments('comments1')">Comments</button>
       <div id="comments1" class="comments">
         <div class="comment">
           <div class="user">User A</div>
@@ -50,13 +44,13 @@
           <div ">...</div>
         </div>
         <div class=" comment">
-            <button class="btn" onclick="replyPost('userReply')">Reply</button>
+            <button class="btn view-post-button" onclick="replyPost('userReply')">Reply</button>
           </div>
           <div id="userReply">
             <br>
             <textarea id="replyBox"></textarea>
             <br>
-            <button class="btn" id="submitBtn">Submit</button>
+            <button class="btn view-post-button" id="submitBtn">Submit</button>
           </div>
         </div>
 
