@@ -18,6 +18,48 @@
             margin-top: 50px;
         }
 
+        /* Styling for the navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+
+        /* Common styles for buttons in the navigation bar */
+        .navbar button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: #4CAF50;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        /* Styling for the "Create Post" button */
+        .create-post-button {
+            background-color: #4CAF50;
+        }
+
+        /* Styling for the "Edit Profile" button */
+        .edit-profile-button {
+            background-color: #008CBA;
+        }
+
+        /* On hover style for buttons */
+        .navbar button:hover {
+            background-color: #45a049;
+        }
+
+        .user-info {
+            text-align: right;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
         .post-container {
             max-width: 800px;
             margin: 50px auto;
@@ -29,6 +71,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
+            position: relative;
         }
 
         .post-info {
@@ -36,28 +79,58 @@
             font-weight: bold;
         }
 
-        .user-info {
-            text-align: right;
-            margin-bottom: 10px;
-            font-weight: bold;
+        .post-content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+
+        .flag-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #FF0000;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
+    <div class="navbar">
+        <button class="create-post-button" onclick="window.location.href='/create_post'">Create Post</button>
+        <button class="edit-profile-button" onclick="window.location.href='/edit_profile'">Edit Profile</button>
+        <button class="logout-button" onclick="window.location.href='/logout'">Logout</button>
+    </div>
+
     <div class="user-info">
         Logged in as: {{ user_name }}
     </div>
 
-    <h1>Dashboard</h1>
+    <h1>Welcome to the Dashboard</h1>
+
     <div class="post-container">
         {% if posts %}
         {% for post in posts %}
         <div class="post">
             <div class="post-info">Posted by: {{ post[0] }}</div>
+            <div class="post-info">Company: {{ post[4] }}</div> <!-- Display the company information here -->
+            <div class="post-info">Industry: {{ post[5] }}</div> <!-- Display the industry information here -->
             <div class="post-info">Date and Time: {{ post[1] }}</div>
             <div class="post-info">Topic: {{ post[2] }}</div>
             <div class="post-content">{{ post[3] }}</div>
+            <form action="/flag_post" method="post">
+                <input type="hidden" name="post_id" value="{{ post[0] }}"> <!-- Use post[0] for the post ID -->
+                <button type="submit" class="flag-button">Flag</button>
+            </form>
         </div>
         {% endfor %}
         {% else %}
