@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Post Point</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .post-container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .post {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .post-info {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .user-info {
+            text-align: right;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .admin-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .view-post-btn,
+        .delete-post-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-post-btn:hover {
+            background-color: #45a049;
+        }
+
+        .delete-post-btn {
+            background-color: #f44336;
+        }
+
+        .delete-post-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="user-info">
+        Logged in as: {{ user_name }}
+    </div>
+
+    <h1>Admin Page</h1>
+    <div class="post-container">
+        {% if posts %}
+        {% for post in posts %}
+        <div class="post">
+            <div class="post-info">Posted by: {{ post[0] }}</div>
+            <div class="post-info">Date and Time: {{ post[1] }}</div>
+            <div class="post-info">Topic: {{ post[2] }}</div>
+            <div class="post-content">{{ post[3] }}</div>
+            <div class="admin-buttons">
+                <form action="{{ url_for('view_post') }}" method="post">
+                    <input type="hidden" name="post_id" value="{{ post[4] }}">
+                    <button class="view-post-btn" type="submit">View Post</button>
+                </form>
+                <form action="{{ url_for('delete_post') }}" method="post">
+                    <input type="hidden" name="post_id" value="{{ post[4] }}">
+                    <button class="delete-post-btn" type="submit">Delete Post</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No posts found.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
