@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Post Point</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit Profile</h1>
+    <form action="/save_changes" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ user.name }}" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="{{ user.email }}" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <label for="industry">Industry:</label>
+        <select name="industry" id="industry" required>
+            <option value="" disabled>Select an industry</option>
+            <option value="IT" {% if user.industry == 'IT' %}selected{% endif %}>IT</option>
+            <option value="Healthcare" {% if user.industry == 'Healthcare' %}selected{% endif %}>Healthcare</option>
+            <option value="Finance" {% if user.industry == 'Finance' %}selected{% endif %}>Finance</option>
+            <option value="Education" {% if user.industry == 'Education' %}selected{% endif %}>Education</option>
+            <option value="Retail" {% if user.industry == 'Retail' %}selected{% endif %}>Retail</option>
+        </select>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+
+</html>

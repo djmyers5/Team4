@@ -1,0 +1,41 @@
+<!-- dashboard.html -->
+
+<!-- ... (existing code) ... -->
+
+<style>
+    /* ... (existing styles) ... */
+
+    .post {
+        /* ... (existing styles) ... */
+        position: relative;
+    }
+
+    .flag-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: #FF0000;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+</style>
+
+<div class="post-container">
+    {% if posts %}
+    {% for post in posts %}
+    <div class="post">
+        <!-- ... (existing post content) ... -->
+        <form action="/flag_post" method="post">
+            <input type="hidden" name="post_id" value="{{ post[6] }}">
+            <button type="submit" class="flag-button">Flag</button>
+        </form>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No posts found.</p>
+    {% endif %}
+</div>

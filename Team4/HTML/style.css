@@ -1,0 +1,401 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #89c2d9;
+}
+
+
+
+header {
+  background-color: #012a4a;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+
+.post {
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 10px 0;
+  position: relative;
+  text-align: center;
+  background-color: #a9d6e5;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.user {
+  font-weight: bold;
+}
+
+.comment {
+  border-top: 1px solid #000;
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+#comments1 {
+  display: none;
+}
+
+#userReply {
+  display: none;
+}
+
+#replyBox {
+  width: 40vw;
+  height: 10vh;
+}
+
+.options {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #008CBA;
+  color: #a9d6e5;
+  
+  padding: 5px;
+}
+
+.options-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #008CBA;
+  color: white;
+  width: 5em;
+}
+
+.options:hover {
+  background-color: #005b80;
+}
+
+.logout-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #008CBA;
+  color: white;
+  padding: 7px 15px;
+  border: 10px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+.logout-btn:hover {
+  background-color: #005b80;
+}
+/* Admin Page */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.navigation-bar {
+  background-color: #a9d6e5;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sidebar-button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar-button:hover {
+  background-color: #005b80;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  background-color: #a9d6e5;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-post-button,
+.delete-post-button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-post-button:hover,
+.delete-post-button:hover {
+  background-color: #005b80;
+}
+
+/* index page */
+
+.index-btn {
+  background-color: #008CBA;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.index-btn:hover {
+  background-color: #005b80;
+}
+
+.index-container {
+  text-align: center;
+}
+
+.index-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.index-h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.index-body {
+  font-family: Arial, sans-serif;
+  background-color: #89c2d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Post Creation */
+
+.forms-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-box {
+  border: 1px solid black;
+  padding: 10px;
+  width: 380px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.form-box label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-box input {
+  width: 95%; /* Adjust the percentage as needed */
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.form-box select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.text-box {
+  border: 1px solid black;
+  padding: 10px;
+  width: 800px;
+  margin: 1% auto;
+  background-color: white;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.word-count {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.post-creation-container {
+  text-align: center;
+  padding: 5%;
+  background-color: #a9d6e5;
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/* Company affiliation */
+
+.companyaff-body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.body-styling {
+  margin-top: 5%;
+  background-color: #a9d6e5;
+  margin-left: 35%; 
+  padding-left: 2%;
+  margin-right: 35%;
+  padding-right: 2%; 
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/* login page */
+.new-user-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+input[type="text"]{
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.login-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Creation Page */
+
+.creation-btn {
+  background-color: #008CBA;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 175%
+}
+
+.creation-body-styling {
+  margin-top: 5%;
+  background-color: #a9d6e5;
+  margin-left: 35%; 
+  padding-left: 2%;
+  margin-right: 35%;
+  padding-right: 3%; 
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.h1-creation{
+  text-align: center;
+  font-size: 200%;
+  margin-bottom: 10%;
+}
+
+.creation-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 175%;
+  text-align: center;
+}
+
+.creation-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Compare Page */
+.comapre-container {
+  text-align: center;
+  margin-top: 3%;
+  background-color: #a9d6e5;
+  margin-left: 35%; 
+  padding-left: 2%;
+  margin-right: 35%;
+  padding-right: 3%; 
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-weight: bold;
+}
+
+.compare-label {
+  font-size: 2rem;
+  margin-right: 20px;
+  color: #333;
+}
+
+/* Weekly Post */
+
+#yes, #no {
+  align-items: center;
+  text-align: center;
+}
+
+#comments {
+  width: 100%;
+  resize: vertical;
+}
