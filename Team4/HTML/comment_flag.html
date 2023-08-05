@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostPoint</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Post Point</h1>
+  </header>
+  <button class="btn logout-btn" onclick="location.href='index.html'">Log Out</button>
+  <div class="navigation-bar">
+    <button onclick="location.href='ChangeInfo.html'" class="sidebar-button">Account</button>
+    <button onclick="location.href='Compare.html'" class="sidebar-button">Compare</button>
+    <button onclick="location.href='weeklyp.html'" class="sidebar-button">Weekly Pulse</button>
+    <button class="sidebar-button">Settings</button>
+  </div>
+
+    <div class="post">
+      <div class="title">Agriculture</div>
+      <div>
+        This week..
+      </div>
+
+      <br>
+
+      
+      <div class="options" onclick="toggleOptions('options1')">&#8942;
+        <div id="options1" class="options-content">
+          <p>Flag</p>
+        </div>
+      </div>
+      <button class="btn view-post-button" onclick="toggleComments('comments1')">Comments</button>
+      <div id="comments1" class="comments">
+        <div class="comment">
+          <div class="user">User A</div>
+          <div>...</div>
+        </div>
+        <div class="comment">
+          <div class="user">User B</div>
+          <div ">...</div>
+        </div>
+        <div class=" comment">
+            <button class="btn view-post-button" onclick="replyPost('userReply')">Reply</button>
+          </div>
+          <div id="userReply">
+            <br>
+            <textarea id="replyBox"></textarea>
+            <br>
+            <button class="btn view-post-button" id="submitBtn">Submit</button>
+          </div>
+        </div>
+
+        <script src=" script.js">
+        </script>
+</body>
+
+</html>
