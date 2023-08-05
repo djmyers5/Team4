@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Creation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Post Point</h1>
+    </header>
+    <button class="btn logout-btn" onclick="location.href='index.html'">Log Out</button>
+    <div class="post-creation-container">
+        <h1>PostPoint</h1>
+        <div class="text-box">
+            <textarea id="postContent" maxlength="200" placeholder="Start typing here..."></textarea>
+            <div class="word-count" id="wordCount">0/200 words</div>
+        </div>
+        <div class="forms-container">
+            <div class="form-box">
+                <label for="companyName">Enter a Company Name:</label>
+                <input type="text" id="companyName" name="companyName" placeholder="Company Name">
+            </div>
+            <div class="form-box">
+                <label for="rating">Submit a Rating (1-5 Stars):</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="index-btn ">+ Create Post</button>
+        </div>
+    </div>
+</body>
+</html>

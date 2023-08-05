@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Affiliation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body class="companyaff-body">
+    <header>
+        <h1>Post Point</h1>
+      </header>
+      <button class="btn logout-btn" onclick="location.href='index.html'">Log Out</button>
+      <div class="navigation-bar">
+        <button onclick="location.href='ChangeInfo.html'" class="sidebar-button">Account</button>
+        <button onclick="location.href='Compare.html'" class="sidebar-button">Compare</button>
+        <button onclick="location.href='weeklyp.html'" class="sidebar-button">Weekly Pulse</button>
+        <button class="sidebar-button">Settings</button>
+      </div>
+    <div class="body-styling">
+    <h1>Company Affiliation</h1>
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+    <br>
+    <label for="companyEmail">Company Email:</label>
+    <input type="text" id="companyEmail" name="companyEmail" placeholder="Enter your company email" required>
+    <br>
+    <label for="industry">Industry:</label>
+    <input type="text" id="industry" name="industry" placeholder="Enter your industry" required>
+    <br>
+    <button class="index-btn ">Submit</button>
+    </div>
+</body>
+</html>
+
