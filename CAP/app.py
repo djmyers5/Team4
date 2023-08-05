@@ -86,6 +86,42 @@ def authenticate():
 
     return redirect(url_for('login'))
 
+@app.route('/admin')
+def admin():
+    # Check if the user is logged in (i.e., email is present in the session)
+    if 'email' in session:
+        # Retrieve the user's name from the users table
+        email = session['email']
+        user_name = None
+
+        try:
+            connection = mysql.connector.connect(**db_config)
+            cursor = connection.cursor()
+
+            select_query = "SELECT name FROM users WHERE email = %s"
+            cursor.execute(select_query, (email,))
+            result = cursor.fetchone()
+
+            if result:
+                user_name = result[0]
+
+            # Fetch all posts from the user_posts table (including the "company" information)
+            select_query = "SELECT name, DAT, topic, post, company, industry FROM user_posts"
+            cursor.execute(select_query)
+            posts = cursor.fetchall()
+
+            cursor.close()
+            connection.close()
+
+            # Render the dashboard template and pass the name and posts to it
+            return render_template('admin.html', user_name=user_name, posts=posts)
+
+        except mysql.connector.Error as error:
+            print("Error while connecting to MySQL:", error)
+
+    # If the user is not logged in, redirect to the login page
+    return redirect(url_for('login'))
+
 @app.route('/dashboard')
 def dashboard():
     # Check if the user is logged in (i.e., email is present in the session)
