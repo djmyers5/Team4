@@ -106,7 +106,8 @@ def dashboard():
                 user_name = result[0]
 
             # Fetch all posts from the user_posts table (including the "company" information)
-            select_query = "SELECT name, DAT, topic, post, company, industry FROM user_posts"
+            select_query = "SELECT id, name, DAT, topic, post, company, industry FROM user_posts"
+
             cursor.execute(select_query)
             posts = cursor.fetchall()
 
@@ -238,10 +239,12 @@ def flag_post():
     if request.method == 'POST':
         post_id = request.form['post_id']
 
+        print(f"Received post_id: {post_id}")  # Log the received post_id
+
         try:
             connection = mysql.connector.connect(**db_config)
             cursor = connection.cursor()
-
+            
             # Update the 'flag' column to 1 (flagged) for the post with the given post_id
             update_query = "UPDATE user_posts SET flag = %s WHERE id = %s"
             data = (1, post_id)
@@ -251,14 +254,17 @@ def flag_post():
             cursor.close()
             connection.close()
 
+            print(f"Flagged post with id: {post_id}")  # Log successful flagging
+
             # Redirect back to the dashboard after flagging the post
             return redirect(url_for('dashboard'))
 
         except mysql.connector.Error as error:
-            print("Error while connecting to MySQL:", error)
+            print(f"Error while connecting to MySQL and flagging post with id {post_id}: {error}")
 
     # If there is an error or the method is not POST, redirect back to the dashboard
     return redirect(url_for('dashboard'))
+
 
 @app.route('/logout')
 def logout():
